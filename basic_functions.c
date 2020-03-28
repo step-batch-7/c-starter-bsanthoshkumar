@@ -1,6 +1,6 @@
 #include <stdio.h>
-int is_even(int);
-int is_odd(int);
+unsigned char is_even(int);
+unsigned char is_odd(int);
 int square(int);
 int cube(int);
 
@@ -15,11 +15,11 @@ int main(){
   return 0;
 }
 
-int is_even(int number) {
+unsigned char is_even(int number) {
   return number % 2 == 0;
 }
 
-int is_odd(int number) {
+unsigned char is_odd(int number) {
   return !is_even(number);
 }
 
