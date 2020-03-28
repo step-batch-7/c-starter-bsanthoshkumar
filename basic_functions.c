@@ -3,6 +3,7 @@ unsigned char is_even(int);
 unsigned char is_odd(int);
 int square(int);
 int cube(int);
+int average_of_three(int, int ,int);
 int find_greatest(int, int);
 int greatest_of_three(int, int, int);
 
@@ -16,7 +17,8 @@ int main() {
   printf(" cube of %d is a %d\n", num1, cube(num1));
   printf("> Enter three numbers: ");
   scanf("%d%d%d",&num1, &num2, &num3);
-  printf("Greatest of %d,%d,%d is %d",num1, num2, num3, greatest_of_three(num1, num2, num3));
+  printf(" Greatest of %d,%d,%d is %d\n",num1, num2, num3, greatest_of_three(num1, num2, num3));
+  printf(" Average of %d,%d,%d is %d\n",num1, num2, num3, average_of_three(num1, num2, num3));
   return 0;
 }
 
@@ -36,9 +38,14 @@ int cube(int number) {
   return square(number) * number;
 }
 
+int average_of_three(int num1, int num2, int num3) {
+  return (num1 + num2 + num3) / 3;
+}
+
 int find_greatest(int num1 , int num2) {
   return num1 > num2 ? num1 : num2;
 }
+
 int greatest_of_three(int num1, int num2, int num3) {
   return find_greatest(find_greatest(num1, num2), num3);
 }
