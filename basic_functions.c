@@ -10,6 +10,7 @@ int greatest_of_three(int, int, int);
 float simple_interest(int, float, float);
 float compound_interest(int, float, float);
 float convert_to_centigrade(float);
+float convert_to_fahrenheit(float);
 
 int main()
 {
@@ -31,7 +32,10 @@ int main()
   printf(" compound interest is %f\n", compound_interest(principal, time, rateofinterest));
   printf("> Enter fahrenheit temperature: ");
   scanf("%f",&temperature);
-  printf("%fF is equal to %fC", temperature, convert_to_centigrade(temperature));
+  printf("%fF is equal to %fC\n", temperature, convert_to_centigrade(temperature));
+  printf("> Enter fahrenheit temperature: ");
+  scanf("%f",&temperature);
+  printf("%fC is equal to %fF\n", temperature, convert_to_fahrenheit(temperature));
   return 0;
 }
 
@@ -83,4 +87,9 @@ float compound_interest(int principal, float time, float rateofinterest)
 float convert_to_centigrade(float temperature)
 {
   return ((temperature - 32) * 5 / 9);
+}
+
+float convert_to_fahrenheit(float temperature)
+{
+  return temperature * 1.8 + 32;
 }
