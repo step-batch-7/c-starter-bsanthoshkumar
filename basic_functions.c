@@ -1,6 +1,7 @@
 #include <stdio.h>
 int is_even(int);
 int is_odd(int);
+int square(int);
 
 int main(){
   int number;
@@ -8,6 +9,7 @@ int main(){
   scanf("%d",&number);
   printf(" %d is a %s number\n", number, is_even(number) ? "even" : "not even");
   printf(" %d is a %s number\n", number, is_odd(number) ? "odd" : "not odd");
+  printf(" square of %d is a %d\n", number, square(number));
   return 0;
 }
 
@@ -17,4 +19,8 @@ int is_even(int number) {
 
 int is_odd(int number) {
   return !is_even(number);
+}
+
+int square(int number) {
+  return number * number;
 }
