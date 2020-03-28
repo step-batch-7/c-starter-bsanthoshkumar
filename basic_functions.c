@@ -1,14 +1,20 @@
 #include <stdio.h>
-int isEven(int);
+int is_even(int);
+int is_odd(int);
 
 int main(){
   int number;
   printf("> Enter a number: ");
   scanf("%d",&number);
-  printf(" %d is a %s number\n", number, isEven(number) ? "even" : "not even");
+  printf(" %d is a %s number\n", number, is_even(number) ? "even" : "not even");
+  printf(" %d is a %s number\n", number, is_odd(number) ? "odd" : "not odd");
   return 0;
 }
 
-int isEven(int number) {
+int is_even(int number) {
   return number % 2 == 0;
+}
+
+int is_odd(int number) {
+  return !is_even(number);
 }
