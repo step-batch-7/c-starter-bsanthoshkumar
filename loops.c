@@ -5,6 +5,7 @@ int odd_series(int);
 int even_series(int);
 int multiplication_table(int, int);
 int odd_numbers_in_range(int, int);
+int even_numbers_in_range(int, int);
 
 
 int main()
@@ -26,6 +27,7 @@ int main()
   printf("> Enter a two numbers to find all numbers b/w those two: ");
   scanf("%d%d",&number, &number2);
   odd_numbers_in_range(number, number2);
+  even_numbers_in_range(number, number2);
 }
 
 int factorial(int number)
@@ -97,6 +99,20 @@ int odd_numbers_in_range(int start, int end)
   for(int index = start;index <= end;index++)
   {
     if(index % 2 != 0)
+    {
+      printf("%d ",index);
+    }
+  }
+  printf("\n");
+  return 0;
+}
+
+int even_numbers_in_range(int start, int end)
+{
+  printf(" even numbers in between %d and %d - ", start, end);
+  for(int index = start;index <= end;index++)
+  {
+    if(index % 2 == 0)
     {
       printf("%d ",index);
     }
