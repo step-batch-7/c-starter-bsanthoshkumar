@@ -32,10 +32,10 @@ int main()
   printf(" compound interest is %f\n", compound_interest(principal, time, rateofinterest));
   printf("> Enter fahrenheit temperature: ");
   scanf("%f",&temperature);
-  printf("%fF is equal to %fC\n", temperature, convert_to_centigrade(temperature));
+  printf(" %fF is equal to %fC\n", temperature, convert_to_centigrade(temperature));
   printf("> Enter fahrenheit temperature: ");
   scanf("%f",&temperature);
-  printf("%fC is equal to %fF\n", temperature, convert_to_fahrenheit(temperature));
+  printf(" %fC is equal to %fF\n", temperature, convert_to_fahrenheit(temperature));
   return 0;
 }
 
