@@ -6,28 +6,32 @@ int even_series(int);
 int multiplication_table(int, int);
 int odd_numbers_in_range(int, int);
 int sum_of_even_numbers_in_range(int, int);
+int every_nth_number_in_range(int, int);
 
 
 int main()
 {
-  int number, length, number2;
+  int number1, number2;
   printf("> Enter a number to find factorial: ");
-  scanf("%d",&number);
-  printf(" Factorial of %d is %d\n", number, factorial(number));
+  scanf("%d",&number1);
+  printf(" Factorial of %d is %d\n", number1, factorial(number1));
   printf("> Enter a length to generate fibonacci series: ");
-  scanf("%d",&number);
-  fibonacci(number);
+  scanf("%d",&number1);
+  fibonacci(number1);
   printf("> Enter a number to find all numbers from 1: ");
-  scanf("%d",&number);
-  odd_series(number);
-  even_series(number);
+  scanf("%d",&number1);
+  odd_series(number1);
+  even_series(number1);
   printf("> Enter a number and range to generate multiplication table: ");
-  scanf("%d%d",&number, &length);
-  multiplication_table(number, length);
+  scanf("%d%d",&number1, &number2);
+  multiplication_table(number1, number2);
   printf("> Enter a two numbers to find all numbers b/w those two: ");
-  scanf("%d%d",&number, &number2);
-  odd_numbers_in_range(number, number2);
-  sum_of_even_numbers_in_range(number, number2);
+  scanf("%d%d",&number1, &number2);
+  odd_numbers_in_range(number1, number2);
+  sum_of_even_numbers_in_range(number1, number2);
+  printf("> Enter a two numbers to find nth number: ");
+  scanf("%d%d",&number1, &number2);
+  every_nth_number_in_range(number1, number2);
 }
 
 int factorial(int number)
@@ -117,6 +121,19 @@ int sum_of_even_numbers_in_range(int start, int end)
       sum += index;
     }
   }
-  printf(" sum of even numbers in between %d and %d is %d",start, end, sum);
+  printf(" sum of even numbers in between %d and %d is %d\n",start, end, sum);
+  return 0;
+}
+
+int every_nth_number_in_range(int start, int end)
+{
+  int number;
+  printf("> Enter nth value: ");
+  scanf("%d", &number);
+  printf("All %dth numbers in between %d and %d - ",number, start, end);
+  for(int index = start + number;index <= end;index += number) {
+    printf(" %d", index);
+  }
+  printf("\n");
   return 0;
 }
