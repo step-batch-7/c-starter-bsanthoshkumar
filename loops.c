@@ -8,7 +8,8 @@ int odd_numbers_in_range(int, int);
 int odd_series_reverse(int);
 int sum_of_even_numbers_in_range(int, int);
 int every_nth_number_in_range(int, int);
-
+int sum_of_any_n_numbers(int);
+int product_of_any_n_numbers(int);
 
 int main()
 {
@@ -36,6 +37,10 @@ int main()
   printf("> Enter a two numbers to find nth number: ");
   scanf("%d%d",&number1, &number2);
   every_nth_number_in_range(number1, number2);
+  printf("> Enter a total number of numbers to add or multiply: ");
+  scanf("%d",&number1);
+  sum_of_any_n_numbers(number1);
+  product_of_any_n_numbers(number1);
 }
 
 int factorial(int number)
@@ -153,5 +158,31 @@ int every_nth_number_in_range(int start, int end)
     printf(" %d", index);
   }
   printf("\n");
+  return 0;
+}
+
+int sum_of_any_n_numbers(int length)
+{
+  int sum = 0,number;
+  for(int index = 1;index <= length;index++)
+  {
+    printf("\t- Enter a number: ");
+    scanf("%d",&number);
+    sum += number;
+  }
+  printf(" sum is %d\n", sum);
+  return 0;
+}
+
+int product_of_any_n_numbers(int length)
+{
+  int product = 1,number;
+  for(int index = 1;index <= length;index++)
+  {
+    printf("\t- Enter a number: ");
+    scanf("%d",&number);
+    product *= number;
+  }
+  printf(" product is %d\n", product);
   return 0;
 }
