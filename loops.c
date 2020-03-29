@@ -5,6 +5,7 @@ int odd_series(int);
 int even_series(int);
 int multiplication_table(int, int);
 int odd_numbers_in_range(int, int);
+int odd_series_reverse(int);
 int sum_of_even_numbers_in_range(int, int);
 int every_nth_number_in_range(int, int);
 
@@ -22,13 +23,16 @@ int main()
   scanf("%d",&number1);
   odd_series(number1);
   even_series(number1);
-  printf("> Enter a number and range to generate multiplication table: ");
-  scanf("%d%d",&number1, &number2);
-  multiplication_table(number1, number2);
   printf("> Enter a two numbers to find all numbers b/w those two: ");
   scanf("%d%d",&number1, &number2);
   odd_numbers_in_range(number1, number2);
   sum_of_even_numbers_in_range(number1, number2);
+  printf("> Enter a numbers to find all odd numbers from number to 1: ");
+  scanf("%d",&number1);
+  odd_series_reverse(number1);
+  printf("> Enter a number and range to generate multiplication table: ");
+  scanf("%d%d",&number1, &number2);
+  multiplication_table(number1, number2);
   printf("> Enter a two numbers to find nth number: ");
   scanf("%d%d",&number1, &number2);
   every_nth_number_in_range(number1, number2);
@@ -87,13 +91,17 @@ int even_series(int end)
   return 0;
 }
 
-int multiplication_table(int number, int length)
+int odd_series_reverse(int number)
 {
-  printf(" multiplication table\n");
-  for(int index = 1;index <= length;index++)
+  printf(" odd numbers - ");
+  for(int index = number;index >= 1;index--)
   {
-    printf("\t%d * %d = %d\n", number, index, number * index);
+    if(index % 2 != 0)
+    {
+      printf("%d ",index);
+    }
   }
+  printf("\n");
   return 0;
 }
 
@@ -122,6 +130,16 @@ int sum_of_even_numbers_in_range(int start, int end)
     }
   }
   printf(" sum of even numbers in between %d and %d is %d\n",start, end, sum);
+  return 0;
+}
+
+int multiplication_table(int number, int length)
+{
+  printf(" multiplication table\n");
+  for(int index = 1;index <= length;index++)
+  {
+    printf("\t%d * %d = %d\n", number, index, number * index);
+  }
   return 0;
 }
 
