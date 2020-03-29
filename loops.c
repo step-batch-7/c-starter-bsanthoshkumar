@@ -1,6 +1,7 @@
 #include <stdio.h>
 int factorial(int);
 int fibonacci(int);
+int odd_series(int);
 
 int main()
 {
@@ -11,6 +12,9 @@ int main()
   printf("> Enter a length to generate fibonacci series: ");
   scanf("%d",&number);
   fibonacci(number);
+  printf("> Enter a number to find all numbers from 1: ");
+  scanf("%d",&number);
+  odd_series(number);
 }
 
 int factorial(int number)
@@ -34,5 +38,20 @@ int fibonacci(int length)
     term2 += term1;
     term1 = temp;
   }
+  printf("\n");
+  return 0;
+}
+
+int odd_series(int end)
+{
+  printf(" odd-series - ");
+  for(int index = 1;index <= end;index++)
+  {
+    if(index % 2 != 0)
+    {
+      printf("%d ",index);
+    }
+  }
+  printf("\n");
   return 0;
 }
