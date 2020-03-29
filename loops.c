@@ -2,6 +2,7 @@
 int factorial(int);
 int fibonacci(int);
 int odd_series(int);
+int even_series(int);
 
 int main()
 {
@@ -15,6 +16,7 @@ int main()
   printf("> Enter a number to find all numbers from 1: ");
   scanf("%d",&number);
   odd_series(number);
+  even_series(number);
 }
 
 int factorial(int number)
@@ -48,6 +50,20 @@ int odd_series(int end)
   for(int index = 1;index <= end;index++)
   {
     if(index % 2 != 0)
+    {
+      printf("%d ",index);
+    }
+  }
+  printf("\n");
+  return 0;
+}
+
+int even_series(int end)
+{
+  printf(" even-series - ");
+  for(int index = 1;index <= end;index++)
+  {
+    if(index % 2 == 0)
     {
       printf("%d ",index);
     }
