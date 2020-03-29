@@ -3,10 +3,12 @@ int factorial(int);
 int fibonacci(int);
 int odd_series(int);
 int even_series(int);
+int multiplication_table(int, int);
+
 
 int main()
 {
-  int number;
+  int number, length;
   printf("> Enter a number to find factorial: ");
   scanf("%d",&number);
   printf(" Factorial of %d is %d\n", number, factorial(number));
@@ -17,6 +19,9 @@ int main()
   scanf("%d",&number);
   odd_series(number);
   even_series(number);
+  printf("> Enter a number and range to generate multiplication table: ");
+  scanf("%d%d",&number,&length);
+  multiplication_table(number, length);
 }
 
 int factorial(int number)
@@ -69,5 +74,15 @@ int even_series(int end)
     }
   }
   printf("\n");
+  return 0;
+}
+
+int multiplication_table(int number, int length)
+{
+  printf(" multiplication table\n");
+  for(int index = 1;index <= length;index++)
+  {
+    printf("\t%d * %d = %d\n", number, index, number * index);
+  }
   return 0;
 }
