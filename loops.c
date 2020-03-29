@@ -4,11 +4,12 @@ int fibonacci(int);
 int odd_series(int);
 int even_series(int);
 int multiplication_table(int, int);
+int odd_numbers_in_range(int, int);
 
 
 int main()
 {
-  int number, length;
+  int number, length, number2;
   printf("> Enter a number to find factorial: ");
   scanf("%d",&number);
   printf(" Factorial of %d is %d\n", number, factorial(number));
@@ -20,8 +21,11 @@ int main()
   odd_series(number);
   even_series(number);
   printf("> Enter a number and range to generate multiplication table: ");
-  scanf("%d%d",&number,&length);
+  scanf("%d%d",&number, &length);
   multiplication_table(number, length);
+  printf("> Enter a two numbers to find all numbers b/w those two: ");
+  scanf("%d%d",&number, &number2);
+  odd_numbers_in_range(number, number2);
 }
 
 int factorial(int number)
@@ -51,7 +55,7 @@ int fibonacci(int length)
 
 int odd_series(int end)
 {
-  printf(" odd-series - ");
+  printf(" odd numbers - ");
   for(int index = 1;index <= end;index++)
   {
     if(index % 2 != 0)
@@ -65,7 +69,7 @@ int odd_series(int end)
 
 int even_series(int end)
 {
-  printf(" even-series - ");
+  printf(" even numbers - ");
   for(int index = 1;index <= end;index++)
   {
     if(index % 2 == 0)
@@ -84,5 +88,19 @@ int multiplication_table(int number, int length)
   {
     printf("\t%d * %d = %d\n", number, index, number * index);
   }
+  return 0;
+}
+
+int odd_numbers_in_range(int start, int end)
+{
+  printf(" odd numbers in between %d and %d - ", start, end);
+  for(int index = start;index <= end;index++)
+  {
+    if(index % 2 != 0)
+    {
+      printf("%d ",index);
+    }
+  }
+  printf("\n");
   return 0;
 }
