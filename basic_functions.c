@@ -12,34 +12,36 @@ float compound_interest(int, float, float);
 float convert_to_centigrade(float);
 float convert_to_fahrenheit(float);
 int gcd(int, int);
+int lcm(int,int);
 
 int main()
 {
   int num1, num2, num3, principal;
-  float time, rateofinterest, temperature;
-  printf("> Enter a number: ");
-  scanf("%d",&num1);
-  printf(" %d is a %s number\n", num1, is_even(num1) ? "even" : "not even");
-  printf(" %d is a %s number\n", num1, is_odd(num1) ? "odd" : "not odd");
-  printf(" square of %d is a %d\n", num1, square(num1));
-  printf(" cube of %d is a %d\n", num1, cube(num1));
-  printf("> Enter three numbers: ");
-  scanf("%d%d%d",&num1, &num2, &num3);
-  printf(" Greatest of %d,%d,%d is %d\n",num1, num2, num3, greatest_of_three(num1, num2, num3));
-  printf(" Average of %d,%d,%d is %d\n",num1, num2, num3, average_of_three(num1, num2, num3));
-  printf("> Enter principal , time , rate of interest: ");
-  scanf("%d%f%f",&principal, &time, &rateofinterest);
-  printf(" simple interest is %f\n", simple_interest(principal, time, rateofinterest));
-  printf(" compound interest is %f\n", compound_interest(principal, time, rateofinterest));
-  printf("> Enter fahrenheit temperature: ");
-  scanf("%f",&temperature);
-  printf(" %fF is equal to %fC\n", temperature, convert_to_centigrade(temperature));
-  printf("> Enter fahrenheit temperature: ");
-  scanf("%f",&temperature);
-  printf(" %fC is equal to %fF\n", temperature, convert_to_fahrenheit(temperature));
+  // float time, rateofinterest, temperature;
+  // printf("> Enter a number: ");
+  // scanf("%d",&num1);
+  // printf(" %d is a %s number\n", num1, is_even(num1) ? "even" : "not even");
+  // printf(" %d is a %s number\n", num1, is_odd(num1) ? "odd" : "not odd");
+  // printf(" square of %d is a %d\n", num1, square(num1));
+  // printf(" cube of %d is a %d\n", num1, cube(num1));
+  // printf("> Enter three numbers: ");
+  // scanf("%d%d%d",&num1, &num2, &num3);
+  // printf(" Greatest of %d,%d,%d is %d\n",num1, num2, num3, greatest_of_three(num1, num2, num3));
+  // printf(" Average of %d,%d,%d is %d\n",num1, num2, num3, average_of_three(num1, num2, num3));
+  // printf("> Enter principal , time , rate of interest: ");
+  // scanf("%d%f%f",&principal, &time, &rateofinterest);
+  // printf(" simple interest is %f\n", simple_interest(principal, time, rateofinterest));
+  // printf(" compound interest is %f\n", compound_interest(principal, time, rateofinterest));
+  // printf("> Enter fahrenheit temperature: ");
+  // scanf("%f",&temperature);
+  // printf(" %fF is equal to %fC\n", temperature, convert_to_centigrade(temperature));
+  // printf("> Enter fahrenheit temperature: ");
+  // scanf("%f",&temperature);
+  // printf(" %fC is equal to %fF\n", temperature, convert_to_fahrenheit(temperature));
   printf("> Enter two numbers to find gcd and lcm: ");
   scanf("%d%d",&num1,&num2);
-  gcd(num1,num2);
+  printf(" GCD of %d and %d is %d\n", num1, num2, gcd(num1,num2));
+  printf(" LCM of %d and %d is %d\n", num1, num2, lcm(num1,num2));
   return 0;
 }
 
@@ -108,6 +110,10 @@ int gcd(int num1, int num2)
       divisor = index;
     }
   }
-  printf(" GCD of %d and %d is %d\n", num1, num2, divisor);
-  return 0;
+  return divisor;
+}
+
+int lcm(int num1, int num2)
+{
+  return (num1 * num2) / gcd(num1, num2);
 }
