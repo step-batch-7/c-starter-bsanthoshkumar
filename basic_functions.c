@@ -11,6 +11,7 @@ float simple_interest(int, float, float);
 float compound_interest(int, float, float);
 float convert_to_centigrade(float);
 float convert_to_fahrenheit(float);
+int gcd(int, int);
 
 int main()
 {
@@ -36,6 +37,9 @@ int main()
   printf("> Enter fahrenheit temperature: ");
   scanf("%f",&temperature);
   printf(" %fC is equal to %fF\n", temperature, convert_to_fahrenheit(temperature));
+  printf("> Enter two numbers to find gcd and lcm: ");
+  scanf("%d%d",&num1,&num2);
+  gcd(num1,num2);
   return 0;
 }
 
@@ -92,4 +96,18 @@ float convert_to_centigrade(float temperature)
 float convert_to_fahrenheit(float temperature)
 {
   return temperature * 1.8 + 32;
+}
+
+int gcd(int num1, int num2)
+{
+  int divisor;
+  for(int index = 1;index <= num1 && index <= num2;index++)
+  {
+    if(num1 % index == 0 && num2 % index == 0)
+    {
+      divisor = index;
+    }
+  }
+  printf(" GCD of %d and %d is %d\n", num1, num2, divisor);
+  return 0;
 }
